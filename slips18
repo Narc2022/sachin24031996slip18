@@ -1,0 +1,125 @@
+import javax.swing.JOptionPane;
+public class greet {
+ public static void main(String[] args) {
+  String number;
+  int result,inputNumber;
+  number = JOptionPane.showInputDialog("enter a number");
+  inputNumber = Integer.parseInt(number);
+  result = computeFactorial(inputNumber);
+  JOptionPane.showMessageDialog(null, "the factorial is :" + result);
+ }
+ public static int computeFactorial(int n) {
+  int i;
+  int result = 1;
+  for (i = 1; i <= n; i++){
+   result = result * i;
+  }
+  return result;
+ }
+}
+
+/* q2
+
+import java.io.*;
+import java.net.*;
+class S_Slip13_2
+{
+public static void main(String a[]) throws Exception
+{
+ServerSocket ss = new ServerSocket(1000);
+System.out.println("Server is waiting for client : ");
+Socket s=ss.accept();
+System.out.println("Client is connected");
+DataInputStream ios=new DataInputStream(s.getInputStream());
+DataOutputStream dos=new DataOutputStream(s.getOutputStream());
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String s1,s2;
+while(true)
+{
+s1 = (String)ios.readUTF();
+if(s1.equals("end") || s1.equals("END"))
+{
+System.out.println("chatting terminated");
+break;
+}
+System.out.println("Client "+s1);
+System.out.println("Server ...");
+s2 = br.readLine();
+dos.writeUTF(s2);
+if(s2.equals("end") || s2.equals("END"))
+{
+System.out.println("chatting terminated");
+break;
+}
+}
+
+}
+NR CLASSES, PUNE (8796064387/90)
+}
+C_Slip13_2.java
+import java.io.*;
+import java.net.*;
+class C_Slip13_2
+{
+public static void main(String a[]) throws Exception
+{
+Socket s = new Socket("localhost",1000);
+System.out.println("client is connected : ");
+DataInputStream ios=new DataInputStream(s.getInputStream());
+DataOutputStream dos=new DataOutputStream(s.getOutputStream());
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String s1,s2;
+while(true)
+{
+System.out.println("Server ....");
+s1=br.readLine();
+dos.writeUTF(s1);
+s2=(String)ios.readUTF();
+if(s2.equals("end") || s2.equals("END"))
+{
+System.out.println("chatting terminated");
+break;
+}
+System.out.println("Client "+s2);
+}
+}
+}
+*/
+
+
+/***********************
+//q1
+
+Public Class Form1
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        ListBox1.Items.Clear()
+        Dim n As Integer
+        Dim i As Integer
+        n = InputBox("Enter Number to create table")
+        For i = 1 To 10
+            ListBox1.Items.Add(i * n)
+        Next
+    End Sub
+End Class
+
+//q2
+ *********************
+ Partial Class_Default
+   Inherits System.Web.Ui.Page
+    Protected Sub ListBox1_Selected Index Change(ByVal Sender.AsOBJECT,ByVal eAsSystem.EventArgs)Handles.ListBox1_Selected Index
+        if(ListBox1.Selected Index = 0)Then
+            Image1.ImageUrl=".\images\car.png"
+        Elseif(ListBox1.Selected Index = 1)Then
+            Image1.ImageUrl=".\images\bike.jpg"
+        Else
+            Image1.ImageUrl=".\images\scooter.jpg"
+        Endif
+    End Sub
+        Protected Sub Button1_Click(ByVal Sender.AsOBJECT,ByVal eAsSystem.EventArgs)Handles Button1_Click
+        Label1.Text = ListBox1.SelectedValue
+   End Sub
+End Class
+ ******* */
+
+ 
